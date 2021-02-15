@@ -1,2 +1,2 @@
 # OnlineCourses
-Codes from online courses or tutorials (Coursera, Udemy, YouTube etc.)
+My "code alongs" from online courses and tutorials (Coursera, Udemy, YouTube etc.). 
