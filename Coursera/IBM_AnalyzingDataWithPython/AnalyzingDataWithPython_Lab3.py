@@ -36,7 +36,7 @@ print(df[["highway-mpg", "price"]].corr())
 
 #%%
 
-## Engine-size and highway-mpg show positive and negative relationship between them and price
+## Positive/negative relationship between engine-size/ highway-mpg and the price
 ## It means, they can be used to predict price
 
 sns.regplot(x="peak-rpm", y="price", data=df)
@@ -70,7 +70,7 @@ sns.boxplot(x="engine-location", y="price", data=df)
 sns.boxplot(x="drive-wheels", y="price", data=df) 
 
 # The distribution of price between the different drive-wheels categories differs; 
-# as such drive-wheels could potentially be a predictor of price. <- I wouldn't say so...
+# as such drive-wheels could potentially be a predictor of price. 
 
 #%%
 
@@ -140,7 +140,7 @@ grouped_test1 = df_gptest.groupby(["drive-wheels", "body-style"], as_index=False
 grouped_pivot = grouped_test1.pivot(index="drive-wheels", columns="body-style")
 print(grouped_pivot)
 
-# Filling missing values (NaN) with 0 <- again, I wouldn't do so...
+# Filling missing values (NaN) with 0 
 
 grouped_pivot = grouped_pivot.fillna(0)
 print(grouped_pivot)
@@ -188,7 +188,7 @@ pearson_coef, p_value = stats.pearsonr(df["wheel-base"], df["price"])
 print("The Pearson Correlation Coefficient is", pearson_coef, " with a P-value of P =", p_value) 
 
 # Coeff = 0.585; p-value < 0.001 => the correlation is statistically significant (p-value), 
-# although the linear relationship isn't extremely stron (coeff)
+# although the linear relationship isn't extremely strong (coeff)
 
 pearson_coef, p_value = stats.pearsonr(df["horsepower"], df["price"])
 print("The Pearson Correlation Coefficient is", pearson_coef, " with a P-value of P =", p_value) 
@@ -212,7 +212,7 @@ print("The Pearson Correlation Coefficient is", pearson_coef, " with a P-value o
 
 #ANOVA
 
-# Checking if different types of drive-wheels impact price
+# Checking if the type of drive-wheels impacts the price
 
 df_gptest = df[["drive-wheels", "body-style", "price"]]
 grouped_test2 = df_gptest[["drive-wheels", "price"]].groupby(["drive-wheels"])
